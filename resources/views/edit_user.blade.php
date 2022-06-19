@@ -116,7 +116,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        <a class="btn btn-primary" href="/add_account" role="button">Dodaj nowego konto bankowe</a>
+                        <a class="btn btn-primary" href="/add_account/{{$edit_user->id}}" role="button">Dodaj nowego konto bankowe</a>
                     </div>
                 </div>
             </div>

@@ -1,21 +1,21 @@
 @extends('base')
+<div class="container">
 
 @section('content')
-    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Doddaj nowe konto bankowe</div>
                     <div class="card-body">
-                        <form method="POST" action="/add_account_post">
+                        <form method="POST" action="/add_account_post/{{$userid}}">
                             @csrf
 
 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">Imie</label>
+                                <label for="account_number" class="col-md-4 col-form-label text-md-end">Numer konta</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('name','registerError') is-invalid @enderror" name="name" value="{{ old('name') }}" autofocus>
-                                    @error('name', 'registerError')
+                                    <input id="account_number" type="text" class="form-control @error('account_number','accountError') is-invalid @enderror" name="account_number" value="{{ old('account_number') }}" autofocus>
+                                    @error('account_number', 'accountError')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
@@ -24,10 +24,10 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="surname" class="col-md-4 col-form-label text-md-end">Nazwisko</label>
+                                <label for="account_title" class="col-md-4 col-form-label text-md-end">Nazwa konta</label>
                                 <div class="col-md-6">
-                                    <input id="surname" type="text" class="form-control @error('name','registerError') is-invalid @enderror" name="surname" value="{{ old('surname') }}" autofocus>
-                                    @error('surname', 'registerError')
+                                    <input id="account_title" type="text" class="form-control @error('account_title','accountError') is-invalid @enderror" name="account_title" value="{{ old('account_title') }}">
+                                    @error('account_title', 'accountError')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
@@ -36,68 +36,19 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="email" class="col-md-4 col-form-label text-md-end">Email</label>
+                                <label for="account_currency" class="col-md-4 col-form-label text-md-end">Waluta</label>
                                 <div class="col-md-6">
-                                    <input id="email" type="text" class="form-control @error('email','registerError') is-invalid @enderror" name="email" value="{{ old('email') }}">
-                                    @error('email', 'registerError')
+                                    <input id="account_currency" type="text" class="form-control @error('account_currency','accountError') is-invalid @enderror" name="account_currency" value="{{ old('account_currency') }}">
+                                    @error('account_currency', 'accountError')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
                                     </span>
                                     @enderror
                                 </div>
                             </div>
-
-                            <div class="row mb-3">
-                                <label for="password" class="col-md-4 col-form-label text-md-end">Hasło</label>
-                                <div class="col-md-6">
-                                    <input id="password" type="text" class="form-control @error('password','registerError') is-invalid @enderror" name="password" value="{{ old('password') }}">
-                                    @error('password', 'registerError')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Powtórz hasło</label>
-                                <div class="col-md-6">
-                                    <input id="password_confirmation" type="text" class="form-control @error('password_confirmation','registerError') is-invalid @enderror" name="password_confirmation">
-                                    @error('password_confirmation', 'registerError')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="address" class="col-md-4 col-form-label text-md-end">Adres</label>
-                                <div class="col-md-6">
-                                    <input id="address" type="text" class="form-control @error('address','registerError') is-invalid @enderror" name="address" value="{{ old('address') }}">
-                                    @error('address', 'registerError')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="credential_level" class="col-md-4 col-form-label text-md-end">Poziom uprawnień</label>
-                                <div class="col-md-6">
-                                    <input id="credential_level" type="text" class="form-control @error('credential_level','registerError') is-invalid @enderror" name="credential_level" value="{{ old('credential_level') }}">
-                                    @error('credential_level', 'registerError')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
-
                             <div class="row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">Dodaj użytkownika</button>
+                                    <button type="submit" class="btn btn-primary">Dodaj nowe konto bankowe</button>
                                 </div>
                             </div>
                         </form>

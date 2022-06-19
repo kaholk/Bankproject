@@ -50,7 +50,7 @@
                             <div class="row mb-3">
                                 <label for="password" class="col-md-4 col-form-label text-md-end">Hasło</label>
                                 <div class="col-md-6">
-                                    <input id="password" type="text" class="form-control @error('password','registerError') is-invalid @enderror" name="password" value="{{ old('password') }}">
+                                    <input id="password" type="password" class="form-control @error('password','registerError') is-invalid @enderror" name="password" value="{{ old('password') }}">
                                     @error('password', 'registerError')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>
@@ -62,7 +62,7 @@
                             <div class="row mb-3">
                                 <label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Powtórz hasło</label>
                                 <div class="col-md-6">
-                                    <input id="password_confirmation" type="text" class="form-control @error('password_confirmation','registerError') is-invalid @enderror" name="password_confirmation">
+                                    <input id="password_confirmation" type="password" class="form-control @error('password_confirmation','registerError') is-invalid @enderror" name="password_confirmation">
                                     @error('password_confirmation', 'registerError')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>

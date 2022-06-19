@@ -38,7 +38,24 @@ class AccountController extends Controller
         return redirect('/user_edit/'.$user_id);
     }
 
-    public  function  add_account(){
-        return view('add_account');
+    public  function  add_account($user_id){
+        return view('add_account',['userid'=>$user_id]);
+    }
+
+    public  function  add_account_post($userid, Request $request){
+        $validated = $request->validateWithBag('accountError',[
+            'account_number' => ['required', 'digits:26'],
+            'account_title' => ['required', 'min:3'],
+            'account_currency' => ['required']
+        ]);
+
+        $account = new Account();
+        $account->number = $validated['account_number'];
+        $account->title = $validated['account_title'];
+        $account->currency = $validated['account_currency'];
+        $account->user_id = $userid;
+        $account->save();
+
+        return redirect('/user_edit/'.$userid);
     }
 }

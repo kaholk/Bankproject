@@ -20,8 +20,10 @@ class UserController extends Controller
             return view('register');
         else if($step == 2 && session()->has('regiserUser'))
             return view('register_confirm');
-        else if($step == 3 && session()->has('regiserUser'))
+        else if($step == 3 && session()->has('regiserUser')){
+            session()->forget('regiserUser');
             return view('register_finish');
+        }
         else
             return \redirect('/register');
     }
@@ -52,7 +54,6 @@ class UserController extends Controller
 
             Mail::raw('Twój kod weryfikacyjny to: '.$validated["keyCode"], function ($message) use ($validated){
                 $message->to($validated['email']);
-                $message->from('projekt_twojbank@int.pl');
                 $message->subject('Kod weryfikacyjny');
             });
 
@@ -66,7 +67,7 @@ class UserController extends Controller
                 'code.required' => 'Kod weryfikacyjny jest wymagany',
                 'code.in' => 'Kod weryfikacyjny jest niepoprawny'
             ]);
-            $validated = session()->pull('regiserUser');
+            $validated = session()->get('regiserUser');
 
             $user = new User();
             $user->name = $validated['name'];

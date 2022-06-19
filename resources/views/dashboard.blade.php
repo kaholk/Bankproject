@@ -8,6 +8,11 @@
 
         <div>
             <h3>Twoje konta</h3>
+            @if($user->accounts()->get()->count() == 0)
+                <div class="alert alert-primary" role="alert">
+                    <h3>Wygląda na to że nie masz jeszcze zadnego konta bankowego, skontaktuj się z naszym działem i razem założymy nowe konto dla ciebie</h3>
+                </div>
+            @endif
             <div class="card-group">
                 @foreach($user->accounts()->get() as $account)
                     <div class="card">
