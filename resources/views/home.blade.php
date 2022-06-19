@@ -68,6 +68,7 @@
                         <p class="card-text">Nadal jesteś zalogowany, kliknij przycisk poniżej aby przejść do swojego
                             konta</p>
                         <a href="{{url('/dashboard') }}" class="btn btn-primary">Przejdz do konta</a>
+                        <a href="{{url('/logout') }}" class="btn btn-primary">Wyloguj się</a>
                     </div>
                 </div>
             @else

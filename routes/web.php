@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -28,6 +29,7 @@ Route::get('/logout',[UserController::class, 'logout']);
 Route::get('/user_delete/{user_id}',[UserController::class, 'delete']);
 Route::get('/user_edit/{user_id}',[UserController::class, 'edit']);
 
+Route::get('/account_delete/{account_id}',[AccountController::class, 'delete']);
 
 Route::post('/register_post/{step?}',[UserController::class, 'register_post']);
 Route::post('/login_post',[UserController::class, 'login_post']);

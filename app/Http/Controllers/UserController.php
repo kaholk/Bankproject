@@ -140,7 +140,8 @@ class UserController extends Controller
     }
 
     public function edit($user_id){
-        $user = User::find($user_id);
+//        $user = User::find($user_id);
+        $user = User::with('accounts')->find($user_id);
         return view('edit_user', ['edit_user'=>$user]);
     }
 }
