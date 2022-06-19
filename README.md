@@ -17,7 +17,7 @@ Uruchomienie Projektu:
 - Run `composer install`
 - Create database `bankapp` or edit `.env` file
 - Run `php artisan key:generate`
-- Run `php artisan migrate`
+- Run `php artisan migrate --seed`
 - Run `npm install`
 - Run `npm run dev`
 - Run `php artisan serve`
