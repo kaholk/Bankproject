@@ -130,4 +130,17 @@ class UserController extends Controller
 
         }
     }
+
+    public function delete($user_id){
+        if (session()->has('user') && session()->get('user')->credential_level == 1){
+            $user = User::find($user_id);
+            $user->delete();
+        }
+        return back();
+    }
+
+    public function edit($user_id){
+        $user = User::find($user_id);
+        return view('edit_user', ['edit_user'=>$user]);
+    }
 }

@@ -25,6 +25,8 @@ Route::get('/login',[UserController::class, 'login']);
 Route::get('/register/{step?}',[UserController::class, 'register']);
 Route::get('/dashboard',[UserController::class, 'dashboard']);
 Route::get('/logout',[UserController::class, 'logout']);
+Route::get('/user_delete/{user_id}',[UserController::class, 'delete']);
+Route::get('/user_edit/{user_id}',[UserController::class, 'edit']);
 
 
 Route::post('/register_post/{step?}',[UserController::class, 'register_post']);

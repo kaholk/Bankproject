@@ -15,6 +15,7 @@
                     <th>Email</th>
                     <th>Poziom uprawnień</th>
                     <th>Edytuj</th>
+                    <th>Usuń</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -24,11 +25,14 @@
                         <td>{{$user->surname}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->credential_level}}</td>
-                        <td><a href="edit_user/{{$user->id}}">Edytuj</a></td>
+                        <td><a href="/user_edit/{{$user->id}}">Edytuj</a></td>
+                        <td><a href="/user_delete/{{$user->id}}">Usuń</a></td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+
+
         </div>
     </div>
 @endsection

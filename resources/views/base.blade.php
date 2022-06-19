@@ -6,13 +6,13 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Projekt</title>
+    <title>Super Bank Polska</title>
 </head>
 <body>
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">Twój Bank</a>
+            <a class="navbar-brand" href="{{ url('/') }}">Super Bank Polska</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,9 +23,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/dashboard') }}">Twoje konto</a>
                         </li>
+                        @if(session()->get('user')->credential_level == 0)
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/new_transaction') }}">Nowy przelew</a>
                         </li>
+                        @endif
                     @endif
                 </ul>
 
