@@ -58,4 +58,9 @@ class AccountController extends Controller
 
         return redirect('/user_edit/'.$userid);
     }
+
+    public function  account_details($account_id){
+        $account = Account::find($account_id);
+        return view('account_details',['account'=>$account]);
+    }
 }

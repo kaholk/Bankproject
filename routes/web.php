@@ -36,6 +36,7 @@ Route::get('/account_edit/{account_id}',[AccountController::class, 'edit']);
 Route::get('/add_account/{user_id}',[AccountController::class, 'add_account']);
 Route::post('/add_account_post/{user_id}',[AccountController::class, 'add_account_post']);
 Route::post('/account_edit_post/{account_id}',[AccountController::class, 'edit_post']);
+Route::get('/account_details/{account_id}',[AccountController::class, 'account_details']);
 
 Route::post('/register_post/{step?}',[UserController::class, 'register_post']);
 Route::post('/login_post',[UserController::class, 'login_post']);

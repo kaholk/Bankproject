@@ -23,7 +23,7 @@
                             @else
                                 <p class="card-text text-success">Stan: {{$account->balance}} {{$account->currency}}</p>
                             @endif
-                            <a href="#" class="btn btn-primary">Wyświetl szczegóły</a>
+                            <a href="/account_details/{{$account->id}}" class="btn btn-primary">Wyświetl szczegóły</a>
 {{--                            <a href="{{url('/') }}" class="btn btn-primary">Wyświetl szczegóły</a>--}}
                         </div>
                     </div>

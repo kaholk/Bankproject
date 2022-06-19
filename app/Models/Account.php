@@ -19,6 +19,22 @@ class Account extends Model
         return $this->hasMany(Transaction::class, 'to_account_number', 'number');
     }
 
+    public function transactions()
+    {
+        $sended_transactions = $this->send_transactions()->get();
+        foreach ($sended_transactions as &$transaction){
+            $transaction->value *= -1;
+            $transaction->sended = 1;
+        }
+
+        $received_transactions =  $this->received_transactions()->get();
+        foreach ($received_transactions as &$transaction)
+            $transaction->sended = 0;
+
+
+        return $sended_transactions->merge($received_transactions)->sortByDesc('created_at');
+    }
+
     public  function getBalanceAttribute(){
         $balance = 0;
         $sended_transactions = $this->send_transactions()->get();
