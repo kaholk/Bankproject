@@ -6,7 +6,7 @@
 
 
 Wymagania
-- <a href="https://git-scm.com/download/win" target="_blank">Git</a>
+- <a href="https://git-scm.com/download/win" target="_blank">Git x</a>
 - <a href="https://nodejs.org/en/" target="_blank">node js (LTS 16.15.1) </a>
 - <a href="https://getcomposer.org/download/" target="_blank">composer (2.3.7)</a>
 - <a href="https://www.apachefriends.org/pl/index.html" target="_blank">xampp (PHP 8.1.6)</a>
