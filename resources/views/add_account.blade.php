@@ -5,9 +5,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Doddaj nowego użytkownika</div>
+                    <div class="card-header">Doddaj nowe konto bankowe</div>
                     <div class="card-body">
-                        <form method="POST" action="/add_user_post">
+                        <form method="POST" action="/add_account_post">
                             @csrf
 
 

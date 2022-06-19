@@ -168,4 +168,26 @@ class UserController extends Controller
     public function add_user(){
         return view('add_user');
     }
+
+    public  function  add_user_post(Request $request){
+        $validated = $request->validateWithBag('registerError',[
+            'name' => ['required', 'max:10'],
+            'surname' => ['required', 'max:20'],
+            'email' => ['required', 'max:50', 'email'],
+            'password' => ['required', 'confirmed', 'min:8', 'max:50'],
+            'address' => ['required'],
+            'credential_level' => ['required'],
+        ]);
+
+        $user = new User();
+        $user->name = $validated['name'];
+        $user->surname = $validated['surname'];
+        $user->email = $validated['email'];
+        $user->password = Hash::make($validated['password']);
+        $user->address = $validated['address'];
+        $user->credential_level = $validated['credential_level'];
+        $user->save();
+
+        return \redirect('/dashboard');
+    }
 }

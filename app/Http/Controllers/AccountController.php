@@ -37,4 +37,8 @@ class AccountController extends Controller
         $user_id = $account->user->id;
         return redirect('/user_edit/'.$user_id);
     }
+
+    public  function  add_account(){
+        return view('add_account');
+    }
 }
