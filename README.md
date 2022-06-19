@@ -6,11 +6,10 @@
 
 
 Wymagania
-- <a href="https://git-scm.com/download/win" target="_blank">Git x</a>
-- <a href="https://nodejs.org/en/" target="_blank">node js (LTS 16.15.1) </a>
-- <a href="https://getcomposer.org/download/" target="_blank">composer (2.3.7)</a>
-- <a href="https://www.apachefriends.org/pl/index.html" target="_blank">xampp (PHP 8.1.6)</a>
-
+- [Git](https://git-scm.com/download/win)
+- [xampp (PHP 8.1.6)](https://www.apachefriends.org/pl/index.html)
+- [node js (LTS 16.15.1)](https://nodejs.org/en/)
+- [composer (2.3.7)](https://getcomposer.org/download/)
 
 
 Uruchomienie Projektu:
