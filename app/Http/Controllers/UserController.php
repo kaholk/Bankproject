@@ -144,4 +144,24 @@ class UserController extends Controller
         $user = User::with('accounts')->find($user_id);
         return view('edit_user', ['edit_user'=>$user]);
     }
+
+    public function  edit_user_post($user_id, Request $request){
+        $validated = $request->validateWithBag('editError',[
+            'name' => ['required'],
+            'surname' => ['required'],
+            'email' => ['required'],
+            'address' => ['required'],
+            'credential_level' => ['required'],
+        ]);
+
+        $user = User::find($user_id);
+        $user->name = $validated['name'];
+        $user->surname = $validated['surname'];
+        $user->email = $validated['email'];
+        $user->address = $validated['address'];
+        $user->credential_level = $validated['credential_level'];
+        $user->save();
+
+        return back();
+    }
 }

@@ -7,15 +7,13 @@
                 <div class="card">
                     <div class="card-header">Dane użytkownika</div>
                     <div class="card-body">
-                        <form method="POST" action="#">
+                        <form method="POST" action="/edit_user_post/{{$edit_user->id}}">
                             @csrf
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Imie</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text"
-                                           class="form-control @error('email','loginError') is-invalid @enderror"
-                                           name="name" value="{{ $edit_user->name }}">
+                                    <input id="name" type="text" class="form-control @error('name','editError') is-invalid @enderror" name="name" value="{{ $edit_user->name }}">
 
                                     @error('name','editError')
                                     <span class="invalid-feedback" role="alert">
@@ -28,9 +26,7 @@
                             <div class="row mb-3">
                                 <label for="surname" class="col-md-4 col-form-label text-md-end">Nazwisko</label>
                                 <div class="col-md-6">
-                                    <input id="surname" type="text"
-                                           class="form-control @error('surname','editError') is-invalid @enderror"
-                                           name="surname" value="{{ $edit_user->surname }}">
+                                    <input id="surname" type="text" class="form-control @error('surname','editError') is-invalid @enderror" name="surname" value="{{ $edit_user->surname }}">
                                     @error('surname','editError')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -46,6 +42,20 @@
                                            class="form-control @error('email','editError') is-invalid @enderror"
                                            name="email" value="{{ $edit_user->email }}">
                                     @error('email','editError')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="address" class="col-md-4 col-form-label text-md-end">Adres</label>
+                                <div class="col-md-6">
+                                    <input id="address" type="text"
+                                           class="form-control @error('address','editError') is-invalid @enderror"
+                                           name="address" value="{{ $edit_user->address }}">
+                                    @error('address','editError')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

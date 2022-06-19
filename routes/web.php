@@ -33,6 +33,7 @@ Route::get('/account_delete/{account_id}',[AccountController::class, 'delete']);
 
 Route::post('/register_post/{step?}',[UserController::class, 'register_post']);
 Route::post('/login_post',[UserController::class, 'login_post']);
+Route::post('/edit_user_post/{user_id}',[UserController::class, 'edit_user_post']);
 
 
 
