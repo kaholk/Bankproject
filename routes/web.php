@@ -30,6 +30,8 @@ Route::get('/user_delete/{user_id}',[UserController::class, 'delete']);
 Route::get('/user_edit/{user_id}',[UserController::class, 'edit']);
 
 Route::get('/account_delete/{account_id}',[AccountController::class, 'delete']);
+Route::get('/account_edit/{account_id}',[AccountController::class, 'edit']);
+Route::post('/account_edit_post/{account_id}',[AccountController::class, 'edit_post']);
 
 Route::post('/register_post/{step?}',[UserController::class, 'register_post']);
 Route::post('/login_post',[UserController::class, 'login_post']);

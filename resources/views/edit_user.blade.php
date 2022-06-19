@@ -64,8 +64,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="credential_level" class="col-md-4 col-form-label text-md-end">Poziom
-                                    uprawnień</label>
+                                <label for="credential_level" class="col-md-4 col-form-label text-md-end">Poziom uprawnień</label>
                                 <div class="col-md-6">
                                     <input id="credential_level" type="text"
                                            class="form-control @error('credential_level','editError') is-invalid @enderror"
@@ -97,7 +96,7 @@
                             <thead class="table-dark">
                             <tr >
                                 <th>Numer konta</th>
-                                <th>Tytuł</th>
+                                <th>Nazwa</th>
                                 <th>Waluta</th>
                                 <th>Saldo</th>
                                 <th>Edytuj</th>

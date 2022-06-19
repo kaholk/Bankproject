@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
                 'currency'=> 'PLN',
             ],
             [
-                'number' => '368426584',
+                'number' => '11122233311122232300000003',
                 'title' => 'konto oszczędnościowe',
                 'currency'=> 'PLN',
             ]
@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
         $accounts[0]->received_transactions()->create([
             'title' => 'Przelew 123456',
             'value' => 130,
-            'from_account_number' => '6498641856519'
+            'from_account_number' => '11122233311122232300000002'
         ]);
 
         User::create([
