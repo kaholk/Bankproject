@@ -28,6 +28,7 @@ Route::get('/dashboard',[UserController::class, 'dashboard']);
 Route::get('/logout',[UserController::class, 'logout']);
 Route::get('/user_delete/{user_id}',[UserController::class, 'delete']);
 Route::get('/user_edit/{user_id}',[UserController::class, 'edit']);
+Route::get('/add_user',[UserController::class, 'add_user']);
 
 Route::get('/account_delete/{account_id}',[AccountController::class, 'delete']);
 Route::get('/account_edit/{account_id}',[AccountController::class, 'edit']);

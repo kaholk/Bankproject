@@ -31,8 +31,7 @@
                 @endforeach
                 </tbody>
             </table>
-
-
+            <a class="btn btn-primary" href="/add_user" role="button">Dodaj nowego użytkownika</a>
         </div>
     </div>
 @endsection

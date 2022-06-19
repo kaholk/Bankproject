@@ -164,4 +164,8 @@ class UserController extends Controller
 
         return back();
     }
+
+    public function add_user(){
+        return view('add_user');
+    }
 }
