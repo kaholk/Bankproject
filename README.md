@@ -6,7 +6,7 @@
 
 
 Wymagania
-- [Git](https://git-scm.com/download/win)
+- [Git](https://git-scm.com/download/win){target="_blank"}
 - [xampp (PHP 8.1.6)](https://www.apachefriends.org/pl/index.html)
 - [node js (LTS 16.15.1)](https://nodejs.org/en/)
 - [composer (2.3.7)](https://getcomposer.org/download/)
